@@ -1,4 +1,4 @@
-# ❤️ Heart Disease Classification API
+# ❤️ Heart Disease Classification
 
 > Machine Learning Model to predict whether a patient as heart disease or not
 
