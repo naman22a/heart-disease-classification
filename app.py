@@ -7,14 +7,9 @@ model = pickle.load(open('heart-disease.pkl', 'rb'))
 
 @app.route('/api/predict',  methods=['POST'])
 def predict_heart_disease():
-
     body = request.get_json()
     prediction = model.predict(np.array([body['fields']]))[0]
-
-    if prediction:
-        return jsonify({'disease': True})
-
-    return jsonify({'disease': False})
+    return jsonify({'disease': bool(prediction)})
 
 if __name__ == '__main__':
     app.run(debug=True)
